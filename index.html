@@ -13,6 +13,9 @@
             color: #333;
             scroll-behavior: smooth;
             overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
             background: #35424a;
@@ -48,12 +51,16 @@
         }
         .container {
             padding: 40px;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            flex: 1;
         }
         .section {
             margin: 40px 0;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-out, transform 1s ease-out;
+            scroll-snap-align: start;
         }
         .section.visible {
             opacity: 1;
@@ -72,7 +79,7 @@
             color: #ffffff;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
+            position: sticky;
             width: 100%;
             bottom: 0;
         }
