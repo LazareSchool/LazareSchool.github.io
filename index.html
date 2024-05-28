@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSA MP3 PD3 Project</title>
+    <title>My Personal Site</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -12,6 +12,7 @@
             background-color: #f4f4f4;
             color: #333;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         header {
             background: #35424a;
@@ -21,6 +22,10 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: background 0.5s;
+        }
+        header.scrolled {
+            background: #1f2a35;
         }
         nav {
             display: flex;
@@ -35,6 +40,7 @@
             padding: 15px 20px;
             text-decoration: none;
             text-transform: uppercase;
+            transition: background 0.3s;
         }
         nav a:hover {
             background: #333;
@@ -45,6 +51,13 @@
         }
         .section {
             margin: 40px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .section h2 {
             font-size: 2.5em;
@@ -71,65 +84,131 @@
             justify-content: center;
             color: #ffffff;
             text-align: center;
+            animation: fadeIn 2s ease-out;
         }
         .hero h1 {
             font-size: 4em;
             margin: 0;
         }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                left: -100%;
+            }
+            to {
+                left: 0;
+            }
+        }
+        .slide-in {
+            position: relative;
+            animation: slideIn 1s forwards;
+        }
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.1);
+            }
+            60% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .bounce-in {
+            animation: bounceIn 1s;
+        }
+        .emoji {
+            font-size: 2em;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .emoji:hover {
+            transform: scale(1.2);
+        }
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 1.5em;
+            color: #e8491d;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #333;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>CSA MP3 PD3 Project</h1>
+        <h1>Welcome to My Personal Site!</h1>
     </header>
     <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#features">Features</a>
-        <a href="#installation">Installation</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
     <div class="hero">
-        <h1>Welcome to CSA MP3 PD3</h1>
+        <h1 class="fade-in">Hello! I'm a High School Student</h1>
     </div>
     <div class="container">
-        <div class="section" id="introduction">
-            <h2>Introduction</h2>
-            <p>Welcome to the official repository for the CSA MP3 PD3 project! This project aims to provide comprehensive solutions and resources for mastering the concepts of Computer Science and Algorithms.</p>
-        </div>
-        <div class="section" id="features">
-            <h2>Features</h2>
-            <p>Our project includes:</p>
-            <ul>
-                <li>Algorithm Implementations</li>
-                <li>Data Structure Implementations</li>
-                <li>Example Applications and Use Cases</li>
-                <li>Comprehensive Documentation and Tutorials</li>
+        <div class="section" id="about">
+            <h2 class="slide-in">About Me</h2>
+            <p>👋 Hi! I'm a high school student from Georgia. I have a passion for programming and love exploring new technologies.</p>
+            <p>🚀 My interests include:</p>
+            <ul class="bounce-in">
+                <li>💻 C++</li>
+                <li>🔧 C#</li>
+                <li>🐍 Python</li>
+                <li>🌐 Web Development</li>
             </ul>
         </div>
-        <div class="section" id="installation">
-            <h2>Installation</h2>
-            <p>To install the necessary dependencies, follow these steps:</p>
-            <ol>
-                <li>Clone the repository:
-                    <pre>
-git clone https://github.com/LazareSchool/csa-mp3-pd3.git
-cd csa-mp3-pd3
-                    </pre>
-                </li>
-                <li>Install dependencies:
-                    <pre>
-pip install -r requirements.txt
-                    </pre>
-                </li>
-            </ol>
+        <div class="section" id="skills">
+            <h2 class="slide-in">Skills</h2>
+            <p>Here are some of the skills I've developed:</p>
+            <ul class="bounce-in">
+                <li>⭐️ C++ Programming</li>
+                <li>⭐️ C# Programming</li>
+                <li>⭐️ Python Programming</li>
+                <li>⭐️ Web Development (HTML, CSS, JavaScript)</li>
+                <li>⭐️ Problem Solving</li>
+            </ul>
         </div>
         <div class="section" id="contact">
-            <h2>Contact</h2>
-            <p>If you have any questions or suggestions, feel free to open an issue or reach out to us at <a href="mailto:email@example.com">email@example.com</a>.</p>
+            <h2 class="slide-in">Contact</h2>
+            <p>If you want to get in touch, feel free to reach out!</p>
+            <div class="social-icons">
+                <a href="mailto:email@example.com">📧</a>
+                <a href="https://github.com/LazareSchool">🐙 GitHub</a>
+                <a href="https://www.linkedin.com/">🔗 LinkedIn</a>
+            </div>
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 CSA MP3 PD3. All rights reserved.</p>
+        <p>&copy; 2024 My Personal Site. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
