@@ -1,53 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elegant GitHub Page</title>
-<style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-  }
-
-  header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-
-  a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
-
-  a:hover {
-    background-color: #555;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSA MP3 PD3 Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #e8491d;
+        }
+        nav a {
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background: #333;
+            color: #ffffff;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .table-of-contents ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .table-of-contents li {
+            margin: 10px 0;
+        }
+        .table-of-contents a {
+            color: #35424a;
+            text-decoration: none;
+        }
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-<header>
-  <h1>Welcome to My Elegant GitHub Page</h1>
-</header>
-
-<main>
-  <p>Step into the world of beautiful code and amazing projects.</p>
-  <a href="https://github.com/LazareSchool/csa-mp3-pd3">Visit My GitHub Repository</a>
-</main>
+    <header>
+        <h1>CSA MP3 PD3 Project</h1>
+    </header>
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#getting-started">Getting Started</a>
+        <a href="#project-structure">Project Structure</a>
+        <a href="#installation">Installation</a>
+        <a href="#usage">Usage</a>
+        <a href="#contributing">Contributing</a>
+        <a href="#license">License</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="section" id="introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to the official repository for the CSA MP3 PD3 project! This project aims to provide comprehensive solutions and resources for mastering the concepts of Computer Science and Algorithms. Whether you're a student, educator, or enthusiast, you'll find valuable content here.</p>
+        </div>
+        <div class="section" id="getting-started">
+            <h2>Getting Started</h2>
+            <p>To get started with this project, clone the repository and follow the instructions provided in the <a href="#installation">Installation</a> section.</p>
+        </div>
+        <div class="section" id="project-structure">
+            <h2>Project Structure</h2>
+            <p>The repository is organized as follows:</p>
+            <pre>
+csa-mp3-pd3/
+├── src/
+│   ├── algorithms/
+│   ├── data_structures/
+│   ├── examples/
+├── docs/
+│   ├── tutorials/
+│   ├── guides/
+├── tests/
+│   ├── unit_tests/
+│   ├── integration_tests/
+├── .gitignore
+├── README.md
+├── LICENSE
+            </pre>
+            <p>
+                - **src**: Contains all source code files.<br>
+                - **algorithms**: Algorithm implementations.<br>
+                - **data_structures**: Data structure implementations.<br>
+                - **examples**: Example applications and use cases.<br>
+                - **docs**: Documentation, tutorials, and guides.<br>
+                - **tests**: Unit and integration tests to ensure code quality.
+            </p>
+        </div>
+        <div class="section" id="installation">
+            <h2>Installation</h2>
+            <p>To install the necessary dependencies, follow these steps:</p>
+            <ol>
+                <li>Clone the repository:
+                    <pre>
+git clone https://github.com/LazareSchool/csa-mp3-pd3.git
+cd csa-mp3-pd3
+                    </pre>
+                </li>
+                <li>Install dependencies:
+                    <pre>
+pip install -r requirements.txt
+                    </pre>
+                </li>
+            </ol>
+        </div>
+        <div class="section" id="usage">
+            <h2>Usage</h2>
+            <p>To run the project, navigate to the desired directory and execute the main script:</p>
+            <pre>
+python src/main.py
+            </pre>
+            <p>For more detailed instructions, refer to the <a href="docs/README.md">documentation</a>.</p>
+        </div>
+        <div class="section" id="contributing">
+            <h2>Contributing</h2>
+            <p>We welcome contributions from the community! If you're interested in contributing, please follow these steps:</p>
+            <ol>
+                <li>Fork the repository.</li>
+                <li>Create a new branch:
+                    <pre>
+git checkout -b feature-branch
+                    </pre>
+                </li>
+                <li>Make your changes and commit them:
+                    <pre>
+git commit -m 'Add new feature'
+                    </pre>
+                </li>
+                <li>Push to the branch:
+                    <pre>
+git push origin feature-branch
+                    </pre>
+                </li>
+                <li>Create a pull request.</li>
+            </ol>
+            <p>For more details, refer to our <a href="CONTRIBUTING.md">contributing guide</a>.</p>
+        </div>
+        <div class="section" id="license">
+            <h2>License</h2>
+            <p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for more details.</p>
+        </div>
+        <div class="section" id="contact">
+            <h2>Contact</h2>
+            <p>If you have any questions or suggestions, feel free to open an issue or reach out to us at <a href="mailto:email@example.com">email@example.com</a>.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 CSA MP3 PD3. All rights reserved.</p>
+    </footer>
 </body>
 </html>
