@@ -6,26 +6,33 @@
     <title>CSA MP3 PD3 Project</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            scroll-behavior: smooth;
         }
         header {
             background: #35424a;
             color: #ffffff;
-            padding: 10px 0;
+            padding: 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav {
             display: flex;
             justify-content: center;
             background: #e8491d;
+            position: sticky;
+            top: 0;
+            z-index: 999;
         }
         nav a {
             color: #ffffff;
-            padding: 14px 20px;
+            padding: 15px 20px;
             text-decoration: none;
             text-transform: uppercase;
         }
@@ -34,10 +41,18 @@
             color: #ffffff;
         }
         .container {
-            padding: 20px;
+            padding: 40px;
         }
         .section {
-            margin: 20px 0;
+            margin: 40px 0;
+        }
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 1.2em;
+            line-height: 1.6;
         }
         footer {
             background: #35424a;
@@ -48,19 +63,18 @@
             width: 100%;
             bottom: 0;
         }
-        .table-of-contents ul {
-            list-style-type: none;
-            padding: 0;
+        .hero {
+            background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
         }
-        .table-of-contents li {
-            margin: 10px 0;
-        }
-        .table-of-contents a {
-            color: #35424a;
-            text-decoration: none;
-        }
-        .table-of-contents a:hover {
-            text-decoration: underline;
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
         }
     </style>
 </head>
@@ -70,50 +84,27 @@
     </header>
     <nav>
         <a href="#introduction">Introduction</a>
-        <a href="#getting-started">Getting Started</a>
-        <a href="#project-structure">Project Structure</a>
+        <a href="#features">Features</a>
         <a href="#installation">Installation</a>
-        <a href="#usage">Usage</a>
-        <a href="#contributing">Contributing</a>
-        <a href="#license">License</a>
         <a href="#contact">Contact</a>
     </nav>
+    <div class="hero">
+        <h1>Welcome to CSA MP3 PD3</h1>
+    </div>
     <div class="container">
         <div class="section" id="introduction">
             <h2>Introduction</h2>
-            <p>Welcome to the official repository for the CSA MP3 PD3 project! This project aims to provide comprehensive solutions and resources for mastering the concepts of Computer Science and Algorithms. Whether you're a student, educator, or enthusiast, you'll find valuable content here.</p>
+            <p>Welcome to the official repository for the CSA MP3 PD3 project! This project aims to provide comprehensive solutions and resources for mastering the concepts of Computer Science and Algorithms.</p>
         </div>
-        <div class="section" id="getting-started">
-            <h2>Getting Started</h2>
-            <p>To get started with this project, clone the repository and follow the instructions provided in the <a href="#installation">Installation</a> section.</p>
-        </div>
-        <div class="section" id="project-structure">
-            <h2>Project Structure</h2>
-            <p>The repository is organized as follows:</p>
-            <pre>
-csa-mp3-pd3/
-├── src/
-│   ├── algorithms/
-│   ├── data_structures/
-│   ├── examples/
-├── docs/
-│   ├── tutorials/
-│   ├── guides/
-├── tests/
-│   ├── unit_tests/
-│   ├── integration_tests/
-├── .gitignore
-├── README.md
-├── LICENSE
-            </pre>
-            <p>
-                - **src**: Contains all source code files.<br>
-                - **algorithms**: Algorithm implementations.<br>
-                - **data_structures**: Data structure implementations.<br>
-                - **examples**: Example applications and use cases.<br>
-                - **docs**: Documentation, tutorials, and guides.<br>
-                - **tests**: Unit and integration tests to ensure code quality.
-            </p>
+        <div class="section" id="features">
+            <h2>Features</h2>
+            <p>Our project includes:</p>
+            <ul>
+                <li>Algorithm Implementations</li>
+                <li>Data Structure Implementations</li>
+                <li>Example Applications and Use Cases</li>
+                <li>Comprehensive Documentation and Tutorials</li>
+            </ul>
         </div>
         <div class="section" id="installation">
             <h2>Installation</h2>
@@ -131,42 +122,6 @@ pip install -r requirements.txt
                     </pre>
                 </li>
             </ol>
-        </div>
-        <div class="section" id="usage">
-            <h2>Usage</h2>
-            <p>To run the project, navigate to the desired directory and execute the main script:</p>
-            <pre>
-python src/main.py
-            </pre>
-            <p>For more detailed instructions, refer to the <a href="docs/README.md">documentation</a>.</p>
-        </div>
-        <div class="section" id="contributing">
-            <h2>Contributing</h2>
-            <p>We welcome contributions from the community! If you're interested in contributing, please follow these steps:</p>
-            <ol>
-                <li>Fork the repository.</li>
-                <li>Create a new branch:
-                    <pre>
-git checkout -b feature-branch
-                    </pre>
-                </li>
-                <li>Make your changes and commit them:
-                    <pre>
-git commit -m 'Add new feature'
-                    </pre>
-                </li>
-                <li>Push to the branch:
-                    <pre>
-git push origin feature-branch
-                    </pre>
-                </li>
-                <li>Create a pull request.</li>
-            </ol>
-            <p>For more details, refer to our <a href="CONTRIBUTING.md">contributing guide</a>.</p>
-        </div>
-        <div class="section" id="license">
-            <h2>License</h2>
-            <p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for more details.</p>
         </div>
         <div class="section" id="contact">
             <h2>Contact</h2>
