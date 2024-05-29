@@ -3,209 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Site</title>
+    <title>My Bio</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(120deg, #000428, #004e92);
+            color: #fff;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 20px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: background 0.5s;
-        }
-        header.scrolled {
-            background: #1f2a35;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #e8491d;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-        nav a {
-            color: #ffffff;
-            padding: 15px 20px;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: background 0.3s;
-        }
-        nav a:hover {
-            background: #333;
-            color: #ffffff;
-        }
-        .container {
-            padding: 40px;
-        }
-        .section {
-            margin: 40px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-        footer {
-            background: #35424a;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .hero {
-            background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            text-align: center;
-            animation: fadeIn 2s ease-out;
-        }
-        .hero h1 {
-            font-size: 4em;
-            margin: 0;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        @keyframes slideIn {
-            from {
-                left: -100%;
-            }
-            to {
-                left: 0;
-            }
-        }
-        .slide-in {
+            overflow: hidden;
             position: relative;
-            animation: slideIn 1s forwards;
         }
-        @keyframes bounceIn {
-            0% {
-                transform: scale(0.1);
-            }
-            60% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
+
+        header, section, footer {
+            position: relative;
+            z-index: 2;
         }
-        .bounce-in {
-            animation: bounceIn 1s;
+
+        header {
+            padding: 2rem 0;
+            animation: fadeIn 2s ease-in-out;
         }
-        .emoji {
-            font-size: 2em;
-            display: inline-block;
-            transition: transform 0.3s;
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: slideIn 2s ease-in-out;
         }
-        .emoji:hover {
-            transform: scale(1.2);
+
+        section {
+            margin: 2rem;
+            animation: fadeIn 2s ease-in-out;
         }
-        .social-icons a {
-            margin: 0 10px;
-            font-size: 1.5em;
-            color: #e8491d;
-            text-decoration: none;
-            transition: color 0.3s;
+
+        section h2 {
+            color: #fff;
+            animation: slideIn 2s ease-in-out;
         }
-        .social-icons a:hover {
-            color: #333;
+
+        footer {
+            background: #333;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        p {
+            margin: 0.5rem 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100px); }
+            to { transform: translateY(0); }
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/foggy.png');
+            animation: moveBackground 60s linear infinite;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-2000px, -2000px); }
+        }
+
+        .filler {
+            animation: fadeIn 3s ease-in-out, slideIn 2s ease-in-out;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 20s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Custom cursor */
+        .cursor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Personal Site!</h1>
+        <h1>👋 Hey there! I'm [Your Name]</h1>
+        <p>Welcome to my personal website</p>
     </header>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="hero">
-        <h1 class="fade-in">Hello! I'm a High School Student</h1>
-    </div>
-    <div class="container">
-        <div class="section" id="about">
-            <h2 class="slide-in">About Me</h2>
-            <p>👋 Hi! I'm a high school student from Georgia. I have a passion for programming and love exploring new technologies.</p>
-            <p>🚀 My interests include:</p>
-            <ul class="bounce-in">
-                <li>💻 C++</li>
-                <li>🔧 C#</li>
-                <li>🐍 Python</li>
-                <li>🌐 Web Development</li>
-            </ul>
-        </div>
-        <div class="section" id="skills">
-            <h2 class="slide-in">Skills</h2>
-            <p>Here are some of the skills I've developed:</p>
-            <ul class="bounce-in">
-                <li>⭐️ C++ Programming</li>
-                <li>⭐️ C# Programming</li>
-                <li>⭐️ Python Programming</li>
-                <li>⭐️ Web Development (HTML, CSS, JavaScript)</li>
-                <li>⭐️ Problem Solving</li>
-            </ul>
-        </div>
-        <div class="section" id="contact">
-            <h2 class="slide-in">Contact</h2>
-            <p>If you want to get in touch, feel free to reach out!</p>
-            <div class="social-icons">
-                <a href="mailto:email@example.com">📧</a>
-                <a href="https://github.com/LazareSchool">🐙 GitHub</a>
-                <a href="https://www.linkedin.com/">🔗 LinkedIn</a>
-            </div>
-        </div>
-    </div>
+    <section>
+        <h2>About Me</h2>
+        <p>🎓 I'm a high school student living in New York.</p>
+        <p>💻 I know C#, Lua, C, and Python.</p>
+        <p>🔍 I have experience in reverse engineering.</p>
+    </section>
+    <section>
+        <h2 class="filler">Projects</h2>
+        <p class="filler">📂 Project 1: Description of your project.</p>
+        <p class="filler">📂 Project 2: Description of another project.</p>
+    </section>
     <footer>
-        <p>&copy; 2024 My Personal Site. All rights reserved.</p>
+        <p>🌟 Thanks for visiting!</p>
     </footer>
+    <div class="background-animation"></div>
+    <div class="cursor" id="custom-cursor"></div>
     <script>
-        document.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 0) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+        // Add particle effects
+        for (let i = 0; i < 100; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.width = `${Math.random() * 10}px`;
+            particle.style.height = particle.style.width;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+            particle.style.animationDelay = `${Math.random() * 20}s`;
+            document.body.appendChild(particle);
+        }
 
-            const sections = document.querySelectorAll('.section');
+        // Custom cursor effect
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        // Scroll animations
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
             sections.forEach(section => {
                 const rect = section.getBoundingClientRect();
                 if (rect.top < window.innerHeight) {
-                    section.classList.add('visible');
+                    section.style.animation = 'slideIn 1s forwards, fadeIn 1s forwards';
                 }
             });
         });
